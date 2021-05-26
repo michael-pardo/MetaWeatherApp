@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MetaWeatherApp</string>
+    <string name="splash_image">splash image</string>
 </resources>
