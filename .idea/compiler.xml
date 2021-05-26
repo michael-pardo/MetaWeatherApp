@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="MetaWeatherApp.app" target="11" />
+      <module name="MetaWeatherApp.data" target="11" />
       <module name="MetaWeatherApp.usecases" target="11" />
     </bytecodeTargetLevel>
   </component>

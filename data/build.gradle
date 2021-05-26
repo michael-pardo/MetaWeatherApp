@@ -34,9 +34,8 @@ android {
 }
 
 dependencies {
-    implementation project(":data")
-    implementation project(":domain")
 
+    implementation project(":domain")
 
     implementation kotlinLib
     implementation coroutinesLib
@@ -46,6 +45,7 @@ dependencies {
     testImplementation mockkLib
     testImplementation coreTestingLib
     testImplementation coroutinesTestLib
+    testImplementation mockWebServerLib
     androidTestImplementation coreTestingLib
     androidTestImplementation expressoLib
     androidTestImplementation testExtLib
