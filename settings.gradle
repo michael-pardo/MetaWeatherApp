@@ -1,2 +1,3 @@
 rootProject.name = "MetaWeatherApp"
 include ':app'
+include ':domain'
