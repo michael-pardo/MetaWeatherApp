@@ -46,6 +46,7 @@ dependencies {
     implementation project(":data")
     implementation project(":framework:requestmanager")
     implementation project(":framework:imagemanager")
+    testImplementation project(":commons-testing")
 
     implementation kotlinLib
     implementation coreKTXLib

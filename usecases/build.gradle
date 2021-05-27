@@ -36,6 +36,8 @@ android {
 dependencies {
     implementation project(":data")
     implementation project(":domain")
+    testImplementation project(":commons-testing")
+
 
 
     implementation kotlinLib
