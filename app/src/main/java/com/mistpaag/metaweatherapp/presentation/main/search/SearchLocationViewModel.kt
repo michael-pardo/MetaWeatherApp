@@ -29,6 +29,7 @@ class SearchLocationViewModel @Inject constructor(
     }
 
     private fun searchLocationByQuery(query: String){
+        if (query.isEmpty()) return
         viewModelScope.launch {
             _state.postValue(SearchLocationState.Loading)
             searchLocationUseCase.invoke(query).collect { wLocationData ->

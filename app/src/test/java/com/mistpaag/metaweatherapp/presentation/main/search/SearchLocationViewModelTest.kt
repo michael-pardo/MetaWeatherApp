@@ -49,7 +49,7 @@ class SearchLocationViewModelTest{
 
     @Test
     fun `get list when invoke LocationSearchViewModel received search location intent`() = coroutineTestRule.testDispatcher.runBlockingTest {
-        every { searchLocationUseCase.invoke(fakeSaveSearchLocationName) } returns fakeLocationSearchNameListFlow
+        every { searchLocationUseCase.invoke(fakeSearchLocationName) } returns fakeLocationSearchNameListFlow
 
         val event = SearchLocationIntent.SearchLocation("usa")
 
@@ -72,9 +72,19 @@ class SearchLocationViewModelTest{
         Assert.assertEquals(2, mutableList.size)
         Assert.assertEquals((slot.captured as SearchLocationState.Error).message, "Error on search")
     }
+
+    @Test
+    fun `verify that LocationSearchViewModel doesn't invoke searchLocationUseCase when query is empty`() = coroutineTestRule.testDispatcher.runBlockingTest {
+        val event = SearchLocationIntent.SearchLocation("")
+
+        viewModel.setIntentEvent(event)
+
+        verify(exactly = 0) { searchLocationUseCase.invoke(any()) }
+        Assert.assertEquals(0, mutableList.size)
+    }
 }
 
-val fakeSaveSearchLocationName = "usa"
+val fakeSearchLocationName = "usa"
 val fakeLocationList = listOf(
     WLocation(title = "Houston", locationType = "City", woeid = 2424766),
     WLocation(title = "Austin", locationType = "City", woeid = 2357536),
