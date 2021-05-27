@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchLocationFragment">
+
+    <fragment
+        android:id="@+id/searchLocationFragment"
+        android:name="com.mistpaag.metaweatherapp.main.search.SearchLocationFragment"
+        android:label="search_location_fragment"
+        tools:layout="@layout/search_location_fragment" />
+</navigation>
