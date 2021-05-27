@@ -24,8 +24,19 @@ class SearchLocationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = SearchLocationFragmentBinding.inflate(inflater, container, false)
+
+        setupUI()
+
         return binding.root
     }
+
+    private fun setupUI(){
+        val adapter = SearchLocationAdapter{
+
+        }
+        binding.searchRecycler.adapter = adapter
+    }
+
 
 
 }
