@@ -1,7 +1,8 @@
-package com.mistpaag.metaweatherapp
+package com.mistpaag.metaweatherapp.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.mistpaag.metaweatherapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
