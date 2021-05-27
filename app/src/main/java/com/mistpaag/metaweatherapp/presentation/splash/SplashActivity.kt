@@ -1,11 +1,11 @@
-package com.mistpaag.metaweatherapp.splash
+package com.mistpaag.metaweatherapp.presentation.splash
 
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.mistpaag.metaweatherapp.databinding.ActivitySplashBinding
-import com.mistpaag.metaweatherapp.main.MainActivity
+import com.mistpaag.metaweatherapp.presentation.main.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 

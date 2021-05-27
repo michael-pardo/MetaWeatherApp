@@ -1,8 +1,7 @@
-package com.mistpaag.metaweatherapp.main
+package com.mistpaag.metaweatherapp.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.mistpaag.metaweatherapp.R
 import com.mistpaag.metaweatherapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

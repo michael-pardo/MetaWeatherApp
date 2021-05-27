@@ -1,4 +1,4 @@
-package com.mistpaag.metaweatherapp.main.search
+package com.mistpaag.metaweatherapp.presentation.main.search
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

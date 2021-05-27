@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/searchLocationFragment"
-        android:name="com.mistpaag.metaweatherapp.main.search.SearchLocationFragment"
+        android:name="com.mistpaag.metaweatherapp.presentation.main.search.SearchLocationFragment"
         android:label="search_location_fragment"
         tools:layout="@layout/search_location_fragment" />
 </navigation>
