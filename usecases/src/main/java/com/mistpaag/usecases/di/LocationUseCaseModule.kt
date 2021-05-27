@@ -1,5 +1,6 @@
 package com.mistpaag.usecases.di
 
+import com.mistpaag.data.LocationRepository
 import com.mistpaag.usecases.SearchLocationUseCase
 import dagger.Module
 import dagger.Provides
@@ -12,8 +13,8 @@ object LocationUseCaseModule {
 
     @Provides
     fun provides(
-
+        locationRepository: LocationRepository
     ) = SearchLocationUseCase(
-
+        locationRepository = locationRepository
     )
 }
