@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.mistpaag.metaweatherapp.databinding.SearchLocationFragmentBinding
+import com.mistpaag.metaweatherapp.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -52,11 +55,21 @@ class SearchLocationFragment : Fragment() {
 
     private fun setupSearchBar(){
         with(binding.searchBarIncluded){
-            searchText.doOnTextChanged { text, _, _, _ ->
-                viewModel.setIntentEvent(
-                    SearchLocationIntent.SearchLocation(text.toString())
-                )
+            searchText.apply {
+                doOnTextChanged { text, _, _, _ ->
+                    viewModel.setIntentEvent(
+                        SearchLocationIntent.SearchLocation(text.toString())
+                    )
+                }
+                setOnEditorActionListener(OnEditorActionListener { _, actionId, _ ->
+                    if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                        searchText.hideKeyboard()
+                        return@OnEditorActionListener true
+                    }
+                    return@OnEditorActionListener false
+                })
             }
+
             closeImage.setOnClickListener {
                 searchText.setText("")
             }
