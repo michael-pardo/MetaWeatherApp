@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.mistpaag.metaweatherapp.R
 import com.mistpaag.metaweatherapp.databinding.LocationDetailFragmentBinding
+import com.mistpaag.metaweatherapp.parcelables.toDomain
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,5 +27,16 @@ class LocationDetailFragment : Fragment() {
     ): View {
         binding = LocationDetailFragmentBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        getArguments(arguments)
+    }
+
+    private fun getArguments(arguments: Bundle?) {
+        arguments?.let {
+            val wLocation = LocationDetailFragmentArgs.fromBundle(it).location.toDomain()
+        }
     }
 }

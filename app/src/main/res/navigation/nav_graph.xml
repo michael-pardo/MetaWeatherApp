@@ -9,5 +9,18 @@
         android:id="@+id/searchLocationFragment"
         android:name="com.mistpaag.metaweatherapp.presentation.main.search.SearchLocationFragment"
         android:label="search_location_fragment"
-        tools:layout="@layout/search_location_fragment" />
+        tools:layout="@layout/search_location_fragment" >
+        <action
+            android:id="@+id/action_searchLocationFragment_to_locationDetailFragment"
+            app:destination="@id/locationDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationDetailFragment"
+        android:name="com.mistpaag.metaweatherapp.presentation.main.detail.LocationDetailFragment"
+        android:label="location_detail_fragment"
+        tools:layout="@layout/location_detail_fragment" >
+        <argument
+            android:name="location"
+            app:argType="com.mistpaag.metaweatherapp.parcelables.WLocationParcelable" />
+    </fragment>
 </navigation>

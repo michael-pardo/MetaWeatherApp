@@ -11,7 +11,10 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.mistpaag.domain.WLocation
 import com.mistpaag.metaweatherapp.databinding.SearchLocationFragmentBinding
+import com.mistpaag.metaweatherapp.parcelables.toParcelable
 import com.mistpaag.metaweatherapp.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,7 +42,7 @@ class SearchLocationFragment : Fragment() {
     private fun setupUI(){
         setupSearchBar()
         val adapter = SearchLocationAdapter{
-
+            goToDetail(it)
         }
         binding.searchRecycler.adapter = adapter
 
@@ -80,6 +83,13 @@ class SearchLocationFragment : Fragment() {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
+    private fun goToDetail(wLocation: WLocation){
+        findNavController().navigate(
+            SearchLocationFragmentDirections.actionSearchLocationFragmentToLocationDetailFragment(
+                wLocation.toParcelable()
+            )
+        )
+    }
 
 
 }
