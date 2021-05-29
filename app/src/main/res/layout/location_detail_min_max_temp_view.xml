@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Today" />
+
+    <ImageView
+        android:id="@+id/icon_image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/ic_temperature"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/max_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="12°"
+        app:layout_constraintBottom_toBottomOf="@id/icon_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/icon_image" />
+
+    <TextView
+        android:id="@+id/min_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        tools:text="12°"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@id/icon_image"
+        app:layout_constraintEnd_toStartOf="@id/max_text"
+        app:layout_constraintTop_toTopOf="@id/icon_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

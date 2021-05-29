@@ -3,4 +3,9 @@
     <string name="splash_image">splash image</string>
     <string name="clear">clear</string>
     <string name="search">"search "</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="time">Time</string>
+    <string name="sunset">Sunset</string>
+    <string name="ic_temperature">temperature</string>
+    <string name="temp_text">%1$s°C</string>
 </resources>
