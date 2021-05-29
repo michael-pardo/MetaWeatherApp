@@ -14,6 +14,6 @@ class LocationRepositoryImpl @Inject constructor(
     }
 
     override fun getLocationInfo(woeid: Long): Flow<ResultsData<WLocationInfo>> {
-        TODO("Not yet implemented")
+        return locationRemoteSource.getLocationInfo(woeid)
     }
 }
