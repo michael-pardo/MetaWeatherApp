@@ -10,6 +10,7 @@ fun ConsolidatedWeatherServer.toDomain() =
         applicableDate=applicableDate,
         minTemp=minTemp,
         maxTemp=maxTemp,
+        theTemp=theTemp,
         weatherStateAbbr=weatherStateAbbr,
     )
 

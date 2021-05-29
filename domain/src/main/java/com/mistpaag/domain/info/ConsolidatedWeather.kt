@@ -6,5 +6,6 @@ data class ConsolidatedWeather(
     val applicableDate: String,
     val minTemp: Double,
     val maxTemp: Double,
+    val theTemp: Double,
     val weatherStateAbbr: String,
 )

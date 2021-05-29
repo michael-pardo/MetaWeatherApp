@@ -11,5 +11,6 @@ fun WLocationInfoServer.toDomain() =
         time= time,
         sunRise= sunRise,
         sunSet= sunSet,
+        timezone= timezoneName,
         consolidatedWeatherList= consolidatedWeatherServerList.toDomain(),
     )

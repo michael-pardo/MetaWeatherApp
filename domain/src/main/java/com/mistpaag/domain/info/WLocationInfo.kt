@@ -7,5 +7,6 @@ data class WLocationInfo(
     val time: String,
     val sunRise: String,
     val sunSet: String,
+    val timezone: String,
     val consolidatedWeatherList: List<ConsolidatedWeather>
 )
