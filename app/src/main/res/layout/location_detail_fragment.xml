@@ -46,6 +46,7 @@
                     android:layout_height="wrap_content" />
 
                 <include
+                    android:layout_marginTop="16dp"
                     android:id="@+id/first_temp_item"
                     layout="@layout/location_detail_min_max_temp_view"
                     android:layout_width="match_parent"
