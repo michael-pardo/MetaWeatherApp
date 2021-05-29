@@ -21,8 +21,8 @@ object LocationUseCaseModule {
 
     @Provides
     fun providesGetLocationInfoUseCase(
-
+        locationRepository: LocationRepository
     ) = GetLocationInfoUseCase(
-
+        locationRepository = locationRepository
     )
 }
