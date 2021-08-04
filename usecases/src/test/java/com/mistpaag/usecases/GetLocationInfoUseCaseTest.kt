@@ -73,6 +73,7 @@ val fakeConsolidatedWeatherList = listOf(
         minTemp=14.96,
         maxTemp=23.265,
         weatherStateAbbr="c",
+        theTemp = 22.32
     ),
     ConsolidatedWeather(
         id=5185503314837504,
@@ -81,6 +82,7 @@ val fakeConsolidatedWeatherList = listOf(
         minTemp=14.96,
         maxTemp=23.265,
         weatherStateAbbr="c",
+        theTemp = 22.32
     ),
 )
 val fakeLocationInfo = WLocationInfo(
@@ -91,6 +93,7 @@ val fakeLocationInfo = WLocationInfo(
     sunRise="2021-05-29T05:11:37.264071+09:00",
     sunSet="2021-05-29T19:31:07.339587+09:00",
     consolidatedWeatherList=fakeConsolidatedWeatherList,
+    timezone = "Asia/Seoul"
 )
 
 val fakeLocationInfoFlow = flow {
