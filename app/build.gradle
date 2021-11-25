@@ -27,6 +27,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerVersion kotlin_version
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -36,6 +40,7 @@ android {
         useIR = true
     }
     buildFeatures {
+        compose true
         viewBinding true
     }
 }
@@ -59,6 +64,12 @@ dependencies {
     implementation legayLib
     implementation lifecycleLivedataLib
     implementation lifecycleLiewModelLib
+
+    //COMPOSE
+    implementation composeUILib
+    implementation composeMaterialLib
+    implementation composePreviewLib
+    implementation activityComposeLib
 
     //TEST
     testImplementation jUnitLib
