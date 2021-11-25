@@ -71,6 +71,8 @@ dependencies {
     implementation composePreviewLib
     implementation activityComposeLib
 
+    implementation "io.coil-kt:coil-compose:1.4.0"
+
     //TEST
     testImplementation jUnitLib
     testImplementation mockkLib

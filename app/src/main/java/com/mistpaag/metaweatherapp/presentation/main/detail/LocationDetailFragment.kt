@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.compose.material.Text
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -18,6 +19,9 @@ import com.mistpaag.metaweatherapp.utils.formattedSunsetTime
 import com.mistpaag.metaweatherapp.utils.formattedTime
 import com.mistpaag.metaweatherapp.utils.toTemperatureText
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class LocationDetailFragment : Fragment() {
@@ -38,6 +42,28 @@ class LocationDetailFragment : Fragment() {
         setupUI()
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        createTextComposable()
+    }
+
+    private fun createTextComposable() {
+        binding.composeContainer.setContent {
+            Text(text = "Hola desde compose")
+        }
+    }
+
+    private fun createDetailImage(wLocationInfo: WLocationInfo){
+        val current = wLocationInfo.consolidatedWeatherList.first()
+        binding.composeContainer.setContent {
+            ImageDescriptionCompose(
+                imageURL = current.weatherStateAbbr,
+                temp = getStringResource(R.string.temp_text, current.theTemp.toTemperatureText()),
+                weatherStateName = current.weatherStateName
+            )
+        }
     }
 
     private fun setupUI(){
@@ -64,6 +90,7 @@ class LocationDetailFragment : Fragment() {
     }
 
     private fun setImageIncluded(wLocationInfo: WLocationInfo){
+        createDetailImage(wLocationInfo = wLocationInfo)
         val current = wLocationInfo.consolidatedWeatherList.first()
         binding.detailImageIncluded.apply {
             tempImage.loadAbbrImage(current.weatherStateAbbr)
