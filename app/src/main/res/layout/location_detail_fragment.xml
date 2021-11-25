@@ -24,6 +24,7 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/back_toolbar_included">
 
@@ -31,7 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
 
                 <include
                     android:id="@+id/detail_image_included"
@@ -46,11 +46,11 @@
                     android:layout_height="wrap_content" />
 
                 <include
-                    android:layout_marginTop="16dp"
                     android:id="@+id/first_temp_item"
                     layout="@layout/location_detail_min_max_temp_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" />
 
                 <include
                     android:id="@+id/second_temp_item"
@@ -69,6 +69,14 @@
                     layout="@layout/location_detail_min_max_temp_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
+                <androidx.compose.ui.platform.ComposeView
+                    android:id="@+id/compose_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp">
+
+                </androidx.compose.ui.platform.ComposeView>
+
             </LinearLayout>
         </ScrollView>
 
