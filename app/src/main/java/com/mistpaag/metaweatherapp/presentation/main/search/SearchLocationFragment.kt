@@ -84,6 +84,7 @@ class SearchLocationFragment : Fragment() {
     }
 
     private fun goToDetail(wLocation: WLocation){
+        view?.hideKeyboard()
         findNavController().navigate(
             SearchLocationFragmentDirections.actionSearchLocationFragmentToLocationDetailFragment(
                 wLocation.toParcelable()
